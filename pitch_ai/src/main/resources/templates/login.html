@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: url('images/bg.png') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .overlay-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .overlay-images img {
+            position: absolute;
+            width: 12vw; /* Responsive image size */
+        }
+
+        .image1 { top: 10%; left: 5%; }
+        .image2 { top: 15%; right: 10%; }
+        .image3 { bottom: 0%; right: 0%; }
+        .image4 { bottom: 0%; left: 0%; }
+        .image5 { top: 10%; left: 50%; transform: translateX(-50%) scale(2); }
+        .image6 { bottom: 30%; left: 45%; transform: scale(1.2); }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 80%;
+            max-width: 350px;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .button-container {
+            margin: 10px 0;
+            position: relative;
+            width: 100%;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #333;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        form button:hover {
+            background-color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .overlay-images img { width: 25vw; }
+            .image5 { transform: translateX(-40%) scale(2); }
+            .image6 { transform: scale(1); }
+            form { width: 90%; }
+        }
+
+        @media (max-width: 480px) {
+            .overlay-images img { width: 20vw; }
+            .image5 { transform: translateX(-50%) scale(1.2); }
+            .image6 { bottom: 20%; }
+            form { width: 80%; padding: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay-images">
+        <img src="images/cloud1.png" class="image1">
+        <img src="images/cloud2.png" class="image2">
+        <img src="images/minecraftblock1.png" class="image3">
+        <img src="images/minecraftblock2.png" class="image4">
+        <img src="images/logo.png" class="image5">
+        <img src="images/cat.png" class="image6">
+    </div>
+    
+    <form>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <div class="button-container">
+            <button type="submit">Log In</button>
+        </div>
+    </form>
+</body>
+</html>
